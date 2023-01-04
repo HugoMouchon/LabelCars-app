@@ -15,7 +15,7 @@ const NosVehicules = (props) => {
                     <View style={styles.containerList}>
                         <Image style={styles.vehiculeImage} source={{ uri: item.image }} />
                         <View>
-                            <Text style={styles.textDescription}>{item.name}</Text>
+                            <Text style={styles.titreVoiture}>{item.name}</Text>
                             <Text style={styles.textDescription}>{item.price}€ par jour</Text>
                         </View>
                     </View>
@@ -41,9 +41,10 @@ const vh = Dimensions.get("window").height;
 const styles = StyleSheet.create({
 
     card: {
-        backgroundColor: '#F0F0F2',
+        backgroundColor: '#CECECE',
         borderRadius: 10,
-        elevation: 10
+        elevation: 10,
+        margin: 15
         
     },
 
@@ -57,11 +58,11 @@ const styles = StyleSheet.create({
 
     vehiculeImage: {
         width: "50%",
-        height: 200,
+        height: 150,
         resizeMode: 'contain'
     },
 
-    textDescription: {
+    titreVoiture: {
         fontWeight: 'bold',
     }
 })
