@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
 
     card: {
         backgroundColor: '#F0F0F2',
-        padding: 10,
         borderRadius: 10,
         elevation: 10
         
@@ -60,9 +59,11 @@ const styles = StyleSheet.create({
         width: "50%",
         height: 200,
         resizeMode: 'contain'
-        
     },
 
+    textDescription: {
+        fontWeight: 'bold',
+    }
 })
 
 export default NosVehicules

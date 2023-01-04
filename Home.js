@@ -8,14 +8,13 @@ export default function Home(props) {
     return (
       <TouchableOpacity
         style={styles.coffeeItem}
-        onPress={() => props.navigation.navigate("NosVehicules", { item })}
+        onPress={() => props.navigation.navigate("Nos Vehicules", { item })}
       >
         <Image source={require("./assets/hero.jpg")} style={styles.img}/>
-        <Text style={styles.titre}>{ cars.length } Véhicules à découvrir</Text>
+        <Text style={styles.titre}>{cars.length} Véhicules à découvrir</Text>
       </TouchableOpacity>
     )
   }
-
 
   return (
     <View style={styles.container}>
@@ -52,6 +51,7 @@ const styles = StyleSheet.create({
     left: 10,
     paddingBottom: 10,
     fontSize: 19,
+    fontWeight: 'bold',
   }
 
 });

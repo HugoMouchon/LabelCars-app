@@ -5,6 +5,14 @@ const VehiculeItem = (props) => {
 
     const [item, setItem] = useState(props.route.params.item)
 
+    const Options = () => {
+        return (
+            <Text>
+
+            </Text>
+        );
+    }
+
     return (
         <View style={styles.viewContainer}>
             <Image source={{ uri: item.image }} style={styles.productImage} />
@@ -21,12 +29,12 @@ const VehiculeItem = (props) => {
 
                 <View style={styles.iconeDesc}>
                     <Image source={require("./assets/icons/compass.png")} style={styles.icones} />
-                    <Text style={styles.texteCenter}>{item.transmission}</Text>
+                    <Text style={styles.texteCenter}>{item.aircondition}</Text>
                 </View>
 
                 <View style={styles.iconeDesc}>
                     <Image source={require("./assets/icons/snow.png")} style={styles.icones} />
-                    <Text style={styles.texteCenter}>{item.transmission}</Text>
+                    <Text style={styles.texteCenter}>{item.navigation}</Text>
                 </View>
             </View>
         </View>
@@ -53,8 +61,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         flexWrap: 'wrap'
-
-
     },
 
     productImage: {
@@ -64,7 +70,8 @@ const styles = StyleSheet.create({
     },
 
     texteCenter: {
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold',
     },
 
     icones: {

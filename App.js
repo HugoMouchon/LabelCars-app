@@ -2,15 +2,24 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
+import { Image, StyleSheet } from 'react-native'
 import Home from './Home'
 import NosVehicules from './NosVehicules'
 import VehiculeItem from './VehiculeItem'
-import cars from './cars'
 
 
 const Stack = createNativeStackNavigator();
 
-const App = (item) => {
+const LogoTitle = () => {
+    return (
+        <Image 
+            style={styles.logo}
+            source={require('./assets/logo-transparent.png')}
+        />
+    );
+}
+
+const App = () => {
     return (
         <NavigationContainer>
             <StatusBar style="light" />
@@ -21,12 +30,30 @@ const App = (item) => {
                 }
             }}>
 
-                <Stack.Screen name='Accueil' component={Home} />
-                <Stack.Screen name='NosVehicules' component={NosVehicules} />
-                <Stack.Screen name='DetailsVehicules' component={VehiculeItem} title={item.name}/>
+                <Stack.Screen name='Accueil' component={Home}
+                    options={{
+                        headerTitle: () => <LogoTitle /> }} 
+                        />
+
+                <Stack.Screen name='Nos Vehicules' component={NosVehicules} />
+
+                <Stack.Screen name='DetailsVehicules' component={VehiculeItem}
+                    options={({ route }) => ({
+                        title: route.params.item.name,
+                    })} />
+                    
             </Stack.Navigator>
         </NavigationContainer>
     )
 }
+
+const styles = StyleSheet.create({
+
+    logo: {
+        width: 50,
+        height: 50,
+    }
+  
+  });
 
 export default App
