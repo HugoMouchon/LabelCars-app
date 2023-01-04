@@ -1,6 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
+import Home from './Home'
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +18,6 @@ const App = () => {
                 }} />
 
                 <Stack.Screen name='Accueil' component={Home} />
-                <Stack.Screen name='CoffeeItem' component={CoffeeItem} options={{ title: "Détail du café" }} />
             </StatusBar>
         </NavigationContainer>
     )

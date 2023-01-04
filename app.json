@@ -10,8 +10,8 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "backgroundColor": "#222222"
+      "backgroundColor": "#2d4f6c"
     }
   },
-  "name": "Label Cars"
+  "name": "Cars3000"
 }
