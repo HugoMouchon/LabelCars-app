@@ -1,16 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity } from 'react-native';
-import { Card } from 'react-native-paper';
+import cars from './cars';
 
-export default function Home() {
+export default function Home(props) {
 
   const boutonListVoiture = (item) => {
     return (
       <TouchableOpacity
         style={styles.coffeeItem}
-        onPress={() => props.navigation.navigate("CoffeeItem", { item })}
+        onPress={() => props.navigation.navigate("NosVehicules", { item })}
       >
         <Image source={require("./assets/hero.jpg")} style={styles.img}/>
+        <Text style={styles.titre}>{ cars.length } Véhicules à découvrir</Text>
       </TouchableOpacity>
     )
   }
@@ -18,9 +19,9 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Card style={styles.card}>
+      <View style={styles.card}>
         {boutonListVoiture()}
-      </Card>
+      </View>
     </View>
   );
 }
@@ -42,6 +43,15 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 200,
     borderRadius: 10
+  },
+
+  titre: {
+    color: '#fff',
+    position: 'absolute',
+    bottom: 0,
+    left: 10,
+    paddingBottom: 10,
+    fontSize: 19,
   }
 
 });
