@@ -9,7 +9,6 @@
 
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
       "backgroundColor": "#2d4f6c"
     }
   },
