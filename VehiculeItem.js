@@ -5,14 +5,6 @@ const VehiculeItem = (props) => {
 
     const [item, setItem] = useState(props.route.params.item)
 
-    const Options = () => {
-        return (
-            <Text>
-
-            </Text>
-        );
-    }
-
     return (
         <View style={styles.viewContainer}>
             <Image source={{ uri: item.image }} style={styles.productImage} />
@@ -46,12 +38,6 @@ const vh = Dimensions.get("window").height;
 
 const styles = StyleSheet.create({
 
-    iconeDesc: {
-        width: "50%",
-        alignItems: 'center',
-        paddingBottom: 60
-    },
-
     viewContainer: {
         width: vw,
 
@@ -61,6 +47,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         flexWrap: 'wrap'
+    },
+
+    iconeDesc: {
+        width: "50%",
+        alignItems: 'center',
+        paddingBottom: 60
     },
 
     productImage: {
