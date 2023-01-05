@@ -5,9 +5,9 @@ import cars from './cars'
 
 const popularCars = (props) => {
 
-    const carsFilter = cars.filter(car => car.reservations > 5);
+    const carsFilter = cars.filter(car => car.reservations > 10);
 
-    const listBookedCars = () => {
+    const listBookedCars = (item) => {
         return carsFilter.map(item => (
             <TouchableOpacity
                 onPress={() => props.navigation.navigate("DetailsVehicules", { item })}
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         padding: 5,
         flexDirection: 'row',
         flexWrap: 'wrap',
+        width: vw,
 
     },
 
